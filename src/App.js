@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import ListOfBooks from './Components/ListOfBooks';
+import books from './Constants/books.json';
+import SimpleList from './Components/SimpleList';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      booksToRead: []
+    }
+  }
+
+  handleBooksToRead = (b) => {
+    this.setState({booksToRead: b});
+  }
+
+  render(){
+ 
+    return (
+        <div className="wrapper">
+          <h1 className="title">Book List</h1>
+          <ListOfBooks 
+            books={books} 
+            booksToRead={this.state.booksToRead} 
+            handleBooksToRead={this.handleBooksToRead}
+          />
+          <SimpleList booksToRead={this.state.booksToRead}/>
+        </div>
+    );
+  }
 }
 
 export default App;

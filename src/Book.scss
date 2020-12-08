@@ -1,0 +1,20 @@
+.book-card {
+    width: 30vw;
+    margin: 1rem;
+    flex-direction: column;
+    text-align: center;
+}
+.list {
+    display: flex;
+    flex-wrap: wrap;
+    width: 85vw;
+    padding: auto;
+    justify-content: center;
+}
+.checkbox-select {
+    margin-top: 0.5rem;
+    opacity: 0.7;
+}
+.title {
+    text-align: center;
+}
